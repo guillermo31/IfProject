@@ -14,10 +14,15 @@ public class Sport
 	/*
 	 * Default constructor for after the fact customization.
 	 * AKA I don't know the info yet.
+	 * Initializing data members with "bad" values to be changed
 	 */
 	public Sport()
 	{
-		
+		this.name = "aadhkf";
+		this.sport = "sitting on the couch";
+		this.intensity = 238;
+		this.timeMinutes = 3058;
+		this.isEnjoyable = true;
 	}
 	
 	/*
