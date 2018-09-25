@@ -2,24 +2,22 @@ package controller;
 
 //imports
 import javax.swing.JOptionPane;
-import model.Sport;
+import model.Swim;
 
 public class IfController
 {	
-	/**
-	 * builds the instance of the controller 
-	 */
+	
+	private Swim userSwim;
+	
 	public IfController() 
 	{
-		
+		userSwim = new Swim();
 	}
 	
-	/**
-	 * where methods are called 
-	 */
+	
 	public void start()
 	{
-		loop();
+		//loop();
 		askUser();
 	}
 	
@@ -41,37 +39,85 @@ public class IfController
 		return isValid;
 	}
 	
-	private void loop()
+	public boolean validInt(String maybeInt)
 	{
-		boolean isDone = false;
-		int count = 0;
+		boolean isValid = false;
 		
-		while(!isDone)
+		
+		try
 		{
-			JOptionPane.showMessageDialog(null, "hey i am looping");
-			
-			count++;
-			if (count >= 10)
-			{
-				isDone = true;
-			}
+			Integer.parseInt(maybeInt);
+			isValid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			JOptionPane.showMessageDialog(null, "you should type an integer like 0348525");
 		}
 		
-		for (int loopy = 0; loopy < 30; loopy +=2) 
-		{
-			JOptionPane.showMessageDialog(null, "the value is: " + loopy);
-		}
+		return isValid;
 	}
+	
+	public boolean validBoolean(String maybeBool)
+	{
+		boolean isValid = false;
+		
+		
+		try
+		{
+			Boolean.parseBoolean(maybeBool);
+			isValid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			JOptionPane.showMessageDialog(null, "you should type a boolean like true or false");
+		}
+		
+		return isValid;
+	}
+	
 	
 	
 	private void askUser() 
 	{
-		String response = JOptionPane.showInputDialog(null,"What is the distance?");
+		String userStroke = JOptionPane.showInputDialog(null, "what stroke did you do?");
+		userSwim.setStroke(userStroke);
 		
-		while (!validDouble(response))
+		String userIntensity = JOptionPane.showInputDialog(null, "how intense did you swim?");
+		//userSwim.setIntensity(userIntensity);
+		
+		String userTime = JOptionPane.showInputDialog(null, "how long did you swim for?");
+		//userSwim.setTimeMinutes(userTime);
+		
+		String userJoy = JOptionPane.showInputDialog(null, "did you enjoy your swim?");
+		//userSwim.setWasEnjoyable(userJoy);
+		
+		while(!validInt(userIntensity)) 
 		{
-			response = JOptionPane.showInputDialog(null,"no!, type in a valid number for the distance");
+			userIntensity = JOptionPane.showInputDialog(null, "Type a valid number");
+			if(validInt(userIntensity)) 
+			{
+				userSwim.setIntensity(Integer.parseInt(userIntensity));
+			}
 		}
+		
+		while(!validInt(userTime)) 
+		{
+			userTime = JOptionPane.showInputDialog(null, "Type a valid number");
+			if(validInt(userTime)) 
+			{
+				userSwim.setIntensity(Integer.parseInt(userTime));
+			}
+		}
+		
+		while(!validBoolean(userJoy)) 
+		{
+			userTime = JOptionPane.showInputDialog(null, "Type true or false");
+			if(validBoolean(userJoy)) 
+			{
+				userSwim.setIntensity(Integer.parseInt(userTime));
+			}
+		}
+		
 	}
 	
 }

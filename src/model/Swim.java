@@ -1,13 +1,12 @@
 package model;
 
-public class Sport
+public class Swim
 {
 	//data members 
-	private String name;
-	private String sport;
+	private String stroke;
 	private int intensity;
 	private int timeMinutes;
-	private boolean isEnjoyable;
+	private boolean wasEnjoyable;
 	
 	//always write data members at the beginning of class
 	
@@ -16,37 +15,34 @@ public class Sport
 	 * AKA I don't know the info yet.
 	 * Initializing data members with "bad" values to be changed
 	 */
-	public Sport()
+	public Swim()
 	{
-		this.name = "aadhkf";
-		this.sport = "sitting on the couch";
+		
+		this.stroke = "sitting on the couch";
 		this.intensity = 238;
 		this.timeMinutes = 3058;
-		this.isEnjoyable = true;
+		this.wasEnjoyable = true;
 	}
 	
 	/*
 	 * Better constructor when I know information for the Sport object.
 	 * @param user's favorite sport's information.
 	 */
-	public Sport(String name, String sport, int intensity, int timeMinutes, boolean isEnjoyable) 
+	public Swim( String stroke, int intensity, int timeMinutes, boolean wasEnjoyable) 
 	{
-		this.name = name;
-		this.sport = sport;
+		
+		this.stroke = stroke;
 		this.intensity = intensity;
 		this.timeMinutes = timeMinutes;
-		this.isEnjoyable = isEnjoyable;
+		this.wasEnjoyable = wasEnjoyable;
 	}
 	
 	//getters 
 	
-	public String getName()
+	
+	public String getStroke()
 	{
-		return name;
-	}
-	public String getSport()
-	{
-		return sport;
+		return stroke;
 	}
 	public int getIntensity()
 	{
@@ -56,19 +52,16 @@ public class Sport
 	{
 		return timeMinutes;
 	}
-	public boolean getIsEnjoyable()
+	public boolean getWasEnjoyable()
 	{
-		return isEnjoyable;
+		return wasEnjoyable;
 	}
 	
 	//setters
-	public void setName(String name)
+	
+	public void setStroke(String stroke) 
 	{
-		this.name = name;
-	}
-	public void setSport(String sport) 
-	{
-		this.sport = sport;
+		this.stroke = stroke;
 	}
 	public void setIntensity(int intensity)
 	{
@@ -78,8 +71,8 @@ public class Sport
 	{
 		this.timeMinutes = timeMinutes;
 	}
-	public void setIsEnjoyable(boolean isEnjoyable)
+	public void setWasEnjoyable(boolean wasEnjoyable)
 	{
-		this.isEnjoyable = isEnjoyable;
+		this.wasEnjoyable = wasEnjoyable;
 	}
 }
