@@ -19,6 +19,25 @@ public class IfController
 	 */
 	public void start()
 	{
-		
+		loop();
 	}
+	
+	
+	private void loop()
+	{
+		boolean isDone = false;
+		int count = 0;
+		
+		while(!isDone)
+		{
+			JOptionPane.showMessageDialog(null, "hey i am looping");
+			
+			count++;
+			if (count >= 10)
+			{
+				isDone = true;
+			}
+		}
+	}
+	
 }
