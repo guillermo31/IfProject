@@ -18,10 +18,10 @@ public class Swim
 	public Swim()
 	{
 		
-		this.stroke = "sitting on the couch";
-		this.intensity = 238;
-		this.timeMinutes = 3058;
-		this.wasEnjoyable = true;
+//		this.stroke = "sitting on the couch";
+//		this.intensity = 238;
+//		this.timeMinutes = 3058;
+//		this.wasEnjoyable = true;
 	}
 	
 	/*
@@ -75,4 +75,31 @@ public class Swim
 	{
 		this.wasEnjoyable = wasEnjoyable;
 	}
+	
+	public String swimJoy(boolean joy) 
+	{	
+		this.wasEnjoyable = joy;
+		
+		if (joy) 
+		{
+			return "you enjoyed your swim";
+		}else if (joy == false)
+		{
+			return "you didn't enjoy your swim";
+		}else 
+		{
+			return "type a valid boolean value";
+		}
+	}
+	
+	
+	public String toString()
+	{
+		String description = "You swam " + stroke + " , with an intensity of " 
+							  + intensity + " percent" + ", for " + timeMinutes + " minutes"
+							  + ", and " + swimJoy(wasEnjoyable); 
+		
+		return description;
+	}
+	
 }

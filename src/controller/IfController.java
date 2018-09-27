@@ -19,6 +19,7 @@ public class IfController
 	{
 		//loop();
 		askUser();
+		JOptionPane.showMessageDialog(null, userSwim );
 	}
 	
 	public boolean validDouble(String maybeDouble)
@@ -41,38 +42,38 @@ public class IfController
 	
 	public boolean validInt(String maybeInt)
 	{
-		boolean isValid = false;
+		boolean isValidInt = false;
 		
 		
 		try
 		{
 			Integer.parseInt(maybeInt);
-			isValid = true;
+			isValidInt = true;
 		}
 		catch(NumberFormatException error)
 		{
 			JOptionPane.showMessageDialog(null, "you should type an integer like 0348525");
 		}
 		
-		return isValid;
+		return isValidInt;
 	}
 	
 	public boolean validBoolean(String maybeBool)
 	{
-		boolean isValid = false;
+		boolean isValidBool = false;
 		
 		
 		try
 		{
 			Boolean.parseBoolean(maybeBool);
-			isValid = true;
+			isValidBool = true;
 		}
 		catch(NumberFormatException error)
 		{
 			JOptionPane.showMessageDialog(null, "you should type a boolean like true or false");
 		}
 		
-		return isValid;
+		return isValidBool;
 	}
 	
 	
@@ -89,35 +90,25 @@ public class IfController
 		//userSwim.setTimeMinutes(userTime);
 		
 		String userJoy = JOptionPane.showInputDialog(null, "did you enjoy your swim?");
-		//userSwim.setWasEnjoyable(userJoy);
+//		userSwim.setWasEnjoyable(userJoy);
 		
 		while(!validInt(userIntensity)) 
 		{
 			userIntensity = JOptionPane.showInputDialog(null, "Type a valid number");
-			if(validInt(userIntensity)) 
-			{
-				userSwim.setIntensity(Integer.parseInt(userIntensity));
-			}
 		}
+		userSwim.setIntensity(Integer.parseInt(userIntensity));
 		
 		while(!validInt(userTime)) 
 		{
 			userTime = JOptionPane.showInputDialog(null, "Type a valid number");
-			if(validInt(userTime)) 
-			{
-				userSwim.setIntensity(Integer.parseInt(userTime));
-			}
 		}
+		userSwim.setTimeMinutes(Integer.parseInt(userTime));
 		
 		while(!validBoolean(userJoy)) 
 		{
-			userTime = JOptionPane.showInputDialog(null, "Type true or false");
-			if(validBoolean(userJoy)) 
-			{
-				userSwim.setIntensity(Integer.parseInt(userTime));
-			}
+			userJoy = JOptionPane.showInputDialog(null, "Type true or false");
 		}
-		
+		userSwim.setWasEnjoyable(Boolean.parseBoolean(userJoy));
 	}
 	
 }
