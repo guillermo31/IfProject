@@ -6,6 +6,7 @@ public class Swim
 	private String stroke;
 	private int intensity;
 	private int timeMinutes;
+	private String yesNoJoy;
 	private boolean wasEnjoyable;
 	
 	//always write data members at the beginning of class
@@ -28,13 +29,14 @@ public class Swim
 	 * Better constructor when I know information for the Sport object.
 	 * @param user's favorite sport's information.
 	 */
-	public Swim( String stroke, int intensity, int timeMinutes, boolean wasEnjoyable) 
+	public Swim( String stroke, int intensity, int timeMinutes, boolean wasEnjoyable, String yesNoJoy) 
 	{
 		
 		this.stroke = stroke;
 		this.intensity = intensity;
 		this.timeMinutes = timeMinutes;
 		this.wasEnjoyable = wasEnjoyable;
+		this.yesNoJoy = yesNoJoy;
 	}
 	
 	//getters 
@@ -56,7 +58,10 @@ public class Swim
 	{
 		return wasEnjoyable;
 	}
-	
+	public String getYesNoJoy()
+	{
+		return yesNoJoy;
+	}
 	//setters
 	
 	public void setStroke(String stroke) 
@@ -75,6 +80,14 @@ public class Swim
 	{
 		this.wasEnjoyable = wasEnjoyable;
 	}
+	public void setYesNoJoy(String yesNoJoy)
+	{
+		this.yesNoJoy = yesNoJoy;
+	}
+	
+	
+
+	
 	
 	public String swimJoy(boolean joy) 
 	{	
@@ -95,7 +108,7 @@ public class Swim
 	
 	public String toString()
 	{
-		String description = "You swam " + stroke + " , with an intensity of " 
+		String description = "You swam " + stroke + ", with an intensity of " 
 							  + intensity + " percent" + ", for " + timeMinutes + " minutes"
 							  + ", and " + swimJoy(wasEnjoyable); 
 		

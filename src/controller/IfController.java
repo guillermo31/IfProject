@@ -62,9 +62,9 @@ public class IfController
 	{
 		boolean isValidBool = false;
 		
-		
 		try
-		{
+		{	
+			
 			Boolean.parseBoolean(maybeBool);
 			isValidBool = true;
 		}
@@ -76,6 +76,22 @@ public class IfController
 		return isValidBool;
 	}
 	
+	public Boolean boolYesNo(String yepNope) 
+	{
+		Boolean yesNo = false;
+		
+		if(yepNope.equals("yes")) 
+		{
+			yesNo = true;
+		}
+		else if(yepNope.equals("no"))
+		{
+			yesNo = false;
+		}
+		
+		
+		return yesNo;
+	}
 	
 	
 	private void askUser() 
@@ -90,25 +106,22 @@ public class IfController
 		//userSwim.setTimeMinutes(userTime);
 		
 		String userJoy = JOptionPane.showInputDialog(null, "did you enjoy your swim?");
+		userSwim.setYesNoJoy(userJoy);
 //		userSwim.setWasEnjoyable(userJoy);
 		
 		while(!validInt(userIntensity)) 
 		{
-			userIntensity = JOptionPane.showInputDialog(null, "Type a valid number");
+			userIntensity = JOptionPane.showInputDialog(null, "Type a valid number for your swim's intensity");
 		}
 		userSwim.setIntensity(Integer.parseInt(userIntensity));
 		
 		while(!validInt(userTime)) 
 		{
-			userTime = JOptionPane.showInputDialog(null, "Type a valid number");
+			userTime = JOptionPane.showInputDialog(null, "Type a valid number for the time you swam");
 		}
 		userSwim.setTimeMinutes(Integer.parseInt(userTime));
 		
-		while(!validBoolean(userJoy)) 
-		{
-			userJoy = JOptionPane.showInputDialog(null, "Type true or false");
-		}
-		userSwim.setWasEnjoyable(Boolean.parseBoolean(userJoy));
+		userSwim.setWasEnjoyable(boolYesNo(userJoy));
 	}
 	
 }
