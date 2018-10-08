@@ -3,6 +3,7 @@ package controller;
 //imports
 import javax.swing.JOptionPane;
 import model.Swim;
+import java.util.ArrayList;
 
 public class IfController
 {	
@@ -14,13 +15,15 @@ public class IfController
 		userSwim = new Swim();
 	}
 	
-	
 	public void start()
 	{
 		//loop();
 		askUser();
 		JOptionPane.showMessageDialog(null, userSwim );
+		lotsOfSwim();
 	}
+	
+	
 	
 	public boolean validDouble(String maybeDouble)
 	{
@@ -123,5 +126,66 @@ public class IfController
 		
 		userSwim.setWasEnjoyable(boolYesNo(userJoy));
 	}
+	
+	private void lotsOfSwim()
+	{	
+		//array list have to have type aka <>
+		ArrayList<Swim> mySwims = new ArrayList<Swim>();
+		
+		Swim sampleSwim = new Swim();
+		Swim otherSwim = new Swim();
+		
+		mySwims.add(otherSwim);
+		mySwims.add(sampleSwim);
+		mySwims.add(sampleSwim);
+		
+		//standard forward loop 
+		//when looping over list starts at 0, ends at LESS than size, and goes up by 1 each time
+		for(int index = 0; index < mySwims.size(); index += 1)
+		{
+			Swim currentSwim = mySwims.get(index);
+			currentSwim.setIntensity(index * currentSwim.getIntensity());
+		}
+			
+		//standard backward loop
+		for(int index = mySwims.size() - 1; index >= 0; index -= 1) 
+		{
+			
+		}
+		
+		
+		for (Swim current : mySwims) 
+		{
+			JOptionPane.showMessageDialog(null, "You swam: " + current.getStroke());
+		}
+		
+	}
+	
+	public void testList()
+	{
+		ArrayList<String> test = new ArrayList<String>();
+		
+		String sampleString = new String();
+		sampleString = "hello world";
+		
+		
+		
+		test.add(1,sampleString);
+		test.add("hi my name is guillermo");
+		test.add(" ");
+		test.add("hi there");
+		
+		
+		for(int index = test.size() - 1; index >= 0; index -= 1) 
+		{
+			String currentString = test.get(index);
+			int stringLength = currentString.length();
+			if()
+		}
+		
+	}
+	
+	
+	
 	
 }
