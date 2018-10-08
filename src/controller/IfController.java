@@ -17,11 +17,10 @@ public class IfController
 	
 	public void start()
 	{
-		//loop();
-		//askUser();
-		//JOptionPane.showMessageDialog(null, userSwim );
-		//lotsOfSwim();
-		testList();
+		askUser();
+		JOptionPane.showMessageDialog(null, userSwim );
+		lotsOfSwim();
+		
 	}
 	
 	
@@ -163,7 +162,8 @@ public class IfController
 	}
 	
 	public void testList()
-	{
+	{	
+		
 		ArrayList<String> test = new ArrayList<String>();
 		
 		String sampleString = new String();
@@ -182,11 +182,13 @@ public class IfController
 			String currentString = test.get(index);
 			int stringLength = currentString.length();
 			
-			if(stringLength == 8) 
+			if(stringLength <= 8) 
 			{
 				test.remove(index);
 			}
 		}
+		
+		
 		
 	}
 	
