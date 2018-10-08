@@ -18,9 +18,10 @@ public class IfController
 	public void start()
 	{
 		//loop();
-		askUser();
-		JOptionPane.showMessageDialog(null, userSwim );
-		lotsOfSwim();
+		//askUser();
+		//JOptionPane.showMessageDialog(null, userSwim );
+		//lotsOfSwim();
+		testList();
 	}
 	
 	
@@ -180,7 +181,11 @@ public class IfController
 		{
 			String currentString = test.get(index);
 			int stringLength = currentString.length();
-			if()
+			
+			if(stringLength == 8) 
+			{
+				test.remove(index);
+			}
 		}
 		
 	}
