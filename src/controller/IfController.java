@@ -96,7 +96,9 @@ public class IfController
 		return yesNo;
 	}
 	
-	
+	/**
+	 * this method records user input 
+	 */
 	private void askUser() 
 	{
 		String userStroke = JOptionPane.showInputDialog(null, "what stroke did you do?");
@@ -126,7 +128,9 @@ public class IfController
 		
 		userSwim.setWasEnjoyable(boolYesNo(userJoy));
 	}
-	
+	/**
+	 * this method creates a list of the swim objects and loops through them to print a string
+	 */
 	private void lotsOfSwim()
 	{	
 		//array list have to have type aka <>
@@ -161,6 +165,9 @@ public class IfController
 		
 	}
 	
+	/**
+	 * this method creates a list and loops through the values to remove the ones that are 8 characters or less
+	 */
 	public void testList()
 	{	
 		
